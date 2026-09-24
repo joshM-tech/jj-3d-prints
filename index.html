@@ -1,120 +1,278 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>JJ 3D PRINTS</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
+      color: #111;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 25px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 28px;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ccc;
+    }
+
+    .hero {
+      background: white;
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .hero h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #666;
+    }
+
+    .products {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .products h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 35px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product img {
+      width: 100%;
+      height: 250px;
+      object-fit: contain;
+      background: #eee;
+      padding: 15px;
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product-info h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .product-info p {
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .buy-button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: #111;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .buy-button:hover {
+      background: #333;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      margin-top: 60px;
+    }
+
+    footer p {
+      margin-top: 8px;
+      color: #ccc;
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">JJ <span>3D PRINTS</span></div>
+  <!-- HEADER -->
+  <header>
+    <h1>JJ 3D PRINTS</h1>
 
-  <nav>
-    <a href="#shop">Shop</a>
-    <a href="#custom">Custom Prints</a>
-    <a href="#about">About</a>
-  </nav>
-</header>
+    <nav>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<section class="hero">
-  <div>
-    <p class="small">LOCAL 3D PRINTING</p>
 
-    <h1>JJ 3D<br><span>PRINTS</span></h1>
+  <!-- HERO -->
+  <section class="hero">
+    <h2>JJ 3D PRINTS</h2>
+    <p>Custom 3D printed products made for you.</p>
+  </section>
+
+
+  <!-- PRODUCTS -->
+  <section class="products" id="products">
+
+    <h2>Our Products</h2>
+
+    <div class="product-grid">
+
+
+      <!-- PRODUCT 1: KEY TAG -->
+      <div class="product">
+
+        <img
+          src="https://tse1.mm.bing.net/th/id/OIP.7h2_J3vpuXvT6c5ky8uUUQAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+          alt="KEYS Key Tag"
+        >
+
+        <div class="product-info">
+
+          <h3>KEYS Key Tag</h3>
+
+          <p>
+            Custom 3D printed key tag.
+          </p>
+
+          <div class="price">$5.00</div>
+
+          <a href="#contact" class="buy-button">
+            Buy Now
+          </a>
+
+        </div>
+      </div>
+
+
+      <!-- PRODUCT 2: PHONE HOLDER -->
+      <div class="product">
+
+        <img
+          src="https://i.etsystatic.com/55986339/r/il/051834/6461592129/il_1140xN.6461592129_t6ob.jpg"
+          alt="3D Printed Phone Holder"
+        >
+
+        <div class="product-info">
+
+          <h3>Phone Holder</h3>
+
+          <p>
+            Handy 3D printed phone holder for your desk.
+          </p>
+
+          <div class="price">$10.00</div>
+
+          <a href="#contact" class="buy-button">
+            Buy Now
+          </a>
+
+        </div>
+      </div>
+
+
+      <!-- PRODUCT 3: DESK BUDDY -->
+      <div class="product">
+
+        <img
+          src="https://i.etsystatic.com/60817041/r/il/a1f547/7607042457/il_1080xN.7607042457_ju79.jpg"
+          alt="3D Printed Desk Buddy"
+        >
+
+        <div class="product-info">
+
+          <h3>Desk Buddy</h3>
+
+          <p>
+            A fun 3D printed buddy for your desk.
+          </p>
+
+          <div class="price">$15.00</div>
+
+          <a href="#contact" class="buy-button">
+            Buy Now
+          </a>
+
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <footer id="contact">
+
+    <h3>JJ 3D PRINTS</h3>
 
     <p>
-      Custom and ready-made 3D prints available
-      in Point Cook and Williams Landing.
+      Contact us to order a custom 3D print.
     </p>
 
-    <a href="#shop" class="button">Shop Now</a>
-  </div>
-
-  <div class="hero-box">
-    <div>JJ</div>
-    <p>3D PRINTS</p>
-  </div>
-</section>
-
-<section id="shop" class="section">
-  <p class="small">THE SHOP</p>
-  <h2>Featured Prints</h2>
-
-  <div class="products">
-
-    <div class="product">
-      <div class="product-image">JJ</div>
-      <h3>Desk Buddy</h3>
-      <p>$12.00</p>
-
-      <a class="buy" href="order.html?product=Desk%20Buddy&price=12.00">
-        Buy Now
-      </a>
-    </div>
-
-    <div class="product">
-      <div class="product-image">3D</div>
-      <h3>Cable Holder</h3>
-      <p>$8.00</p>
-
-      <a class="buy" href="order.html?product=Cable%20Holder&price=8.00">
-        Buy Now
-      </a>
-    </div>
-
-    <div class="product">
-      <div class="product-image">★</div>
-      <h3>Custom Key Tag</h3>
-      <p>$10.00</p>
-
-      <a class="buy" href="order.html?product=Custom%20Key%20Tag&price=10.00">
-        Buy Now
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<section id="custom" class="custom">
-  <p class="small">CUSTOM ORDERS</p>
-
-  <h2>Got an idea?</h2>
-
-  <p>
-    Want something made specifically for you?
-    Send us your idea and we'll work out the details.
-  </p>
-
-  <a class="button" href="order.html?product=Custom%20Print">
-    Request Custom Print
-  </a>
-</section>
-
-<section id="about" class="section">
-
-  <p class="small">ABOUT JJ</p>
-
-  <h2>Local Prints.</h2>
-
-  <p class="about-text">
-    JJ 3D PRINTS makes fun, useful and custom 3D printed
-    products for customers in Point Cook and Williams Landing.
-  </p>
-
-  <div class="location">
-    📍 Point Cook & Williams Landing
-  </div>
-
-</section>
-
-<footer>
-  <div class="logo">JJ <span>3D PRINTS</span></div>
-
-  <p>3D prints made your way.</p>
-</footer>
+  </footer>
 
 </body>
 </html>
+```
