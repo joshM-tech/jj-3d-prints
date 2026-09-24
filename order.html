@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order | JJ 3D PRINTS</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .order-page {
+      min-height: 100vh;
+      padding: 80px 8%;
+      background: #f5f5f5;
+    }
+
+    .order-box {
+      max-width: 650px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid #ddd;
+    }
+
+    .order-box h1 {
+      font-size: 45px;
+      margin-top: 0;
+    }
+
+    .order-box input,
+    .order-box textarea {
+      width: 100%;
+      padding: 14px;
+      margin: 8px 0 15px;
+      border: 1px solid #ccc;
+      border-radius: 9px;
+      font-size: 16px;
+    }
+
+    .order-box label {
+      font-weight: bold;
+    }
+
+    .product-selected {
+      background: #f0f0f0;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+    }
+
+    .submit-order {
+      width: 100%;
+      padding: 15px;
+      background: #050505;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: 900;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 25px;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .notice {
+      color: #666;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="order-page">
+
+  <div class="order-box">
+
+    <a class="back" href="index.html">← Back to JJ 3D PRINTS</a>
+
+    <p class="small">ORDER / REQUEST</p>
+
+    <h1>Place your order</h1>
+
+    <div class="product-selected">
+      <strong>Product:</strong>
+      <span id="productName">Custom Print</span>
+      <br>
+      <strong>Price:</strong>
+      $<span id="productPrice">Contact us</span>
+    </div>
+
+    <p class="notice">
+      📍 Orders are currently available in
+      <strong>Point Cook and Williams Landing</strong>.
+    </p>
+
+    <form id="orderForm">
+
+      <label>Your name</label>
+      <input id="customerName" type="text" required>
+
+      <label>Email</label>
+      <input id="customerEmail" type="email" required>
+
+      <label>Quantity</label>
+      <input id="quantity" type="number" min="1" value="1" required>
+
+      <label>Order details</label>
+      <textarea
+        id="details"
+        rows="5"
+        placeholder="Colour, size, custom text, or anything else..."
+      ></textarea>
+
+      <button class="submit-order" type="submit">
+        Send Order Request
+      </button>
+
+    </form>
+
+    <p class="notice">
+      After you send the request, JJ 3D PRINTS can contact you
+      to confirm the order, payment and pickup/delivery details.
+    </p>
+
+  </div>
+
+</div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const product = params.get("product") || "Custom Print";
+const price = params.get("price") || "";
+
+document.getElementById("productName").textContent = product;
+
+if (price) {
+  document.getElementById("productPrice").textContent =
+    parseFloat(price).toFixed(2);
+}
+
+document.getElementById("orderForm").addEventListener("submit", function(e) {
+
+  e.preventDefault();
+
+  const name = document.getElementById("customerName").value;
+  const email = document.getElementById("customerEmail").value;
+  const quantity = document.getElementById("quantity").value;
+  const details = document.getElementById("details").value;
+
+  const subject =
+    encodeURIComponent("JJ 3D PRINTS Order - " + product);
+
+  const body =
+    encodeURIComponent(
+      "JJ 3D PRINTS ORDER\n\n" +
+      "Product: " + product + "\n" +
+      "Price: " + (price ? "$" + price : "Custom quote") + "\n" +
+      "Quantity: " + quantity + "\n\n" +
+      "Customer name: " + name + "\n" +
+      "Customer email: " + email + "\n\n" +
+      "Order details:\n" + details
+    );
+
+  window.location.href =
+    "mailto:majoungj@gmail.com?subject=" +
+    subject +
+    "&body=" +
+    body;
+
+});
+
+</script>
+
+</body>
+</html> 

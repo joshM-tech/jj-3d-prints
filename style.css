@@ -1,0 +1,291 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f5f5f5;
+  color: #080808;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* NAVBAR */
+
+header {
+  height: 75px;
+  background: #050505;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 21px;
+  font-weight: 900;
+}
+
+.logo span {
+  font-weight: 400;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: white;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 600px;
+  background: #050505;
+  color: white;
+  padding: 90px 8%;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.small {
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 900;
+}
+
+.hero h1 {
+  font-size: clamp(60px, 9vw, 110px);
+  line-height: 0.85;
+  letter-spacing: -6px;
+  margin: 20px 0;
+}
+
+.hero h1 span {
+  color: #999;
+}
+
+.hero p {
+  max-width: 550px;
+  color: #aaa;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 22px;
+  background: white;
+  color: black;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+/* HERO BOX */
+
+.hero-box {
+  height: 360px;
+  background: linear-gradient(145deg, #1b1b1b, #080808);
+  border: 1px solid #333;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hero-box div {
+  width: 170px;
+  height: 170px;
+  border: 3px solid white;
+  display: grid;
+  place-items: center;
+  font-size: 65px;
+  font-weight: 900;
+  transform: rotate(-8deg);
+  box-shadow: 18px 18px 0 #777;
+}
+
+.hero-box p {
+  margin-top: 45px;
+  color: white;
+  font-weight: 900;
+}
+
+/* SECTIONS */
+
+.section {
+  padding: 90px 8%;
+}
+
+h2 {
+  font-size: 50px;
+  letter-spacing: -3px;
+  margin: 10px 0 35px;
+}
+
+/* PRODUCTS */
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.product {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 18px;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.product-image {
+  height: 230px;
+  background: #e8e8e8;
+  display: grid;
+  place-items: center;
+  font-size: 55px;
+  font-weight: 900;
+}
+
+.product h3,
+.product p {
+  margin-left: 20px;
+}
+
+.product h3 {
+  margin-bottom: 5px;
+  font-size: 21px;
+}
+
+.product p {
+  color: #555;
+  font-weight: bold;
+}
+
+.buy {
+  display: inline-block;
+  margin-left: 20px;
+  background: #050505;
+  color: white;
+  padding: 11px 18px;
+  border-radius: 9px;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+.buy:hover {
+  background: #333;
+}
+
+/* CUSTOM */
+
+.custom {
+  background: #080808;
+  color: white;
+  padding: 90px 8%;
+}
+
+.custom p {
+  max-width: 600px;
+  color: #aaa;
+  line-height: 1.7;
+}
+
+.custom .button {
+  margin-top: 10px;
+}
+
+/* LOCATION */
+
+.about-text {
+  max-width: 700px;
+  color: #666;
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+.location {
+  margin-top: 25px;
+  padding: 18px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+  background: #050505;
+  color: white;
+  padding: 50px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  color: #888;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  nav {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 60px;
+  }
+
+  .hero-box {
+    display: none;
+  }
+
+  .products {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 65px 6%;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
