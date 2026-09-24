@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,6 +49,44 @@
       margin-bottom: 25px;
     }
 
+    .payment-info {
+      background: #080808;
+      color: white;
+      padding: 22px;
+      border-radius: 14px;
+      margin: 25px 0;
+    }
+
+    .payment-info h2 {
+      font-size: 24px;
+      margin: 0 0 12px;
+      letter-spacing: -1px;
+    }
+
+    .payment-info p {
+      color: #ccc;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    .steps {
+      margin: 25px 0;
+      padding: 20px;
+      background: #f0f0f0;
+      border-radius: 14px;
+    }
+
+    .steps h2 {
+      font-size: 24px;
+      margin: 0 0 15px;
+      letter-spacing: -1px;
+    }
+
+    .steps p {
+      margin: 10px 0;
+      line-height: 1.5;
+    }
+
     .submit-order {
       width: 100%;
       padding: 15px;
@@ -95,6 +134,36 @@
       $<span id="productPrice">Contact us</span>
     </div>
 
+    <div class="steps">
+      <h2>How it works</h2>
+
+      <p><strong>1. Submit your order</strong><br>
+      Fill in the form below with your details.</p>
+
+      <p><strong>2. We confirm your order</strong><br>
+      JJ 3D PRINTS will contact you to confirm the final price and details.</p>
+
+      <p><strong>3. Payment</strong><br>
+      Payment is arranged after your order has been confirmed.</p>
+
+      <p><strong>4. Your print is prepared</strong><br>
+      Once everything is confirmed, we'll prepare your 3D print.</p>
+
+      <p><strong>5. Pickup / delivery</strong><br>
+      We'll arrange the pickup or delivery details with you.</p>
+    </div>
+
+    <div class="payment-info">
+      <h2>💳 Payment</h2>
+
+      <p>
+        Payment is <strong>not taken on this website</strong>.
+        Submit your order request first. JJ 3D PRINTS will contact
+        you to confirm the order, final price and payment details
+        before you pay.
+      </p>
+    </div>
+
     <p class="notice">
       📍 Orders are currently available in
       <strong>Point Cook and Williams Landing</strong>.
@@ -119,14 +188,14 @@
       ></textarea>
 
       <button class="submit-order" type="submit">
-        Send Order Request
+        Submit Order Request
       </button>
 
     </form>
 
     <p class="notice">
-      After you send the request, JJ 3D PRINTS can contact you
-      to confirm the order, payment and pickup/delivery details.
+      By submitting this form, you're sending an order request.
+      You are not being charged at this stage.
     </p>
 
   </div>
@@ -181,4 +250,6 @@ document.getElementById("orderForm").addEventListener("submit", function(e) {
 </script>
 
 </body>
-</html> 
+</html>
+```
+
