@@ -137,30 +137,41 @@
     <div class="steps">
       <h2>How it works</h2>
 
-      <p><strong>1. Submit your order</strong><br>
-      Fill in the form below with your details.</p>
+      <p>
+        <strong>1. Submit your order</strong><br>
+        Fill in the form below with your details.
+      </p>
 
-      <p><strong>2. We confirm your order</strong><br>
-      JJ 3D PRINTS will contact you to confirm the final price and details.</p>
+      <p>
+        <strong>2. We confirm your order</strong><br>
+        JJ 3D PRINTS will contact you to confirm the final price
+        and order details.
+      </p>
 
-      <p><strong>3. Payment</strong><br>
-      Payment is arranged after your order has been confirmed.</p>
+      <p>
+        <strong>3. Cash payment</strong><br>
+        Payment is made in cash when you collect your order.
+      </p>
 
-      <p><strong>4. Your print is prepared</strong><br>
-      Once everything is confirmed, we'll prepare your 3D print.</p>
+      <p>
+        <strong>4. Your print is prepared</strong><br>
+        Once everything is confirmed, we'll prepare your 3D print.
+      </p>
 
-      <p><strong>5. Pickup / delivery</strong><br>
-      We'll arrange the pickup or delivery details with you.</p>
+      <p>
+        <strong>5. Pickup / delivery</strong><br>
+        We'll arrange the pickup or delivery details with you.
+      </p>
     </div>
 
     <div class="payment-info">
-      <h2>💳 Payment</h2>
+      <h2>💵 Cash Payment Only</h2>
 
       <p>
-        Payment is <strong>not taken on this website</strong>.
-        Submit your order request first. JJ 3D PRINTS will contact
-        you to confirm the order, final price and payment details
-        before you pay.
+        JJ 3D PRINTS accepts <strong>cash payments only</strong>.
+        No payment is required when you submit your order request.
+        We'll confirm your order and total price with you first.
+        Payment is then made in cash when you collect your order.
       </p>
     </div>
 
@@ -172,13 +183,29 @@
     <form id="orderForm">
 
       <label>Your name</label>
-      <input id="customerName" type="text" required>
+      <input
+        id="customerName"
+        type="text"
+        required
+        placeholder="Enter your name"
+      >
 
       <label>Email</label>
-      <input id="customerEmail" type="email" required>
+      <input
+        id="customerEmail"
+        type="email"
+        required
+        placeholder="Enter your email"
+      >
 
       <label>Quantity</label>
-      <input id="quantity" type="number" min="1" value="1" required>
+      <input
+        id="quantity"
+        type="number"
+        min="1"
+        value="1"
+        required
+      >
 
       <label>Order details</label>
       <textarea
@@ -220,10 +247,17 @@ document.getElementById("orderForm").addEventListener("submit", function(e) {
 
   e.preventDefault();
 
-  const name = document.getElementById("customerName").value;
-  const email = document.getElementById("customerEmail").value;
-  const quantity = document.getElementById("quantity").value;
-  const details = document.getElementById("details").value;
+  const name =
+    document.getElementById("customerName").value;
+
+  const email =
+    document.getElementById("customerEmail").value;
+
+  const quantity =
+    document.getElementById("quantity").value;
+
+  const details =
+    document.getElementById("details").value;
 
   const subject =
     encodeURIComponent("JJ 3D PRINTS Order - " + product);
@@ -236,7 +270,9 @@ document.getElementById("orderForm").addEventListener("submit", function(e) {
       "Quantity: " + quantity + "\n\n" +
       "Customer name: " + name + "\n" +
       "Customer email: " + email + "\n\n" +
-      "Order details:\n" + details
+      "Payment method: CASH\n\n" +
+      "Order details:\n" +
+      details
     );
 
   window.location.href =
@@ -252,4 +288,3 @@ document.getElementById("orderForm").addEventListener("submit", function(e) {
 </body>
 </html>
 ```
-
